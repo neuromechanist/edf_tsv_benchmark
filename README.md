@@ -7,9 +7,9 @@ Comparsion between tsv.gz and EDF timeseries data storage
 Method:
 a) Read the data. Remove/adjust the headers, and non-compliant columns. the time column is noncompliant with EDF since it uses >8-byte integers. You can remove it or subtract the first time-element from the time column.
 
-b) Create a concatenated version of the data to simulate longer (or higher-frequency datasets). I concatenated the data with itself 10 times. So there are 10 data matrices, each with 30 columns, but with n, n*2, n*3, …., n*10 rows.
+b) Create a concatenated version of the data to simulate longer (or higher-frequency datasets). I concatenated the data with itself 10 times. So there are 10 data matrices, each with 30 columns, but with n, n * 2, n * 3, …., n * 10 rows.
  
-c)  Save the data metrices using `edfwrite`, BIDS `tsvwrite`, and `writematrix`. Note the `writematrix` does not support the `tsv` name. So, the files should be saved in `txt`, then renamed and then zipped.
+c) Save the data metrices using `edfwrite`, BIDS `tsvwrite`, and `writematrix`. Note the `writematrix` does not support the `tsv` name. So, the files should be saved in `txt`, then renamed and then zipped (not implemented here, but will not add singficant overhead).
 
 d) Read the data files using `edfread`, BIDS `tsvread`, and `readmatrix`.
 
